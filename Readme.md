@@ -39,14 +39,14 @@ sudo apt install debootstrap rsync gzip
 sudo ./build-image.sh
 ```
 
-This will:
+This script automates the creation of a bootable image. It:
 
-- Create `linode-fixed.img` (6GB)
-- Mount and install Ubuntu via `debootstrap`
-- Configure hostname, fstab, netplan, ssh
-- Create root and optional user
-- Copy selected files from `/root/` into the image
-- Compress the image into `linode-fixed.img.gz`
+- Creates a 6GB raw image file
+- Mounts and bootstraps Ubuntu with `debootstrap`
+- Installs system packages, configures hostname, fstab, netplan, and SSH
+- Adds a non-root user and root password
+- Injects files from your `/root/` directory into the image
+- Compresses the image to `linode-fixed.img.gz`
 
 ### 2. Upload to Linode
 
@@ -58,6 +58,21 @@ Go to the [Linode Cloud Manager → Images](https://cloud.linode.com/images) and
 - Choose "Custom Image"
 - Select `linode-fixed.img.gz`
 - Deploy the instance
+
+---
+
+## 📖 Included Files
+
+### `build-image.sh`
+A complete bash script that builds and configures the bootable image automatically. You can run it directly or use it as a base for your own variations.
+
+### `manual-steps.md`
+An alternative to the script above — a detailed step-by-step manual guide with command-by-command instructions. Ideal if you want to learn the process or debug.
+
+### `post-boot-setup.md`
+A quick reference for what to do **after** booting your image on Linode, especially if:
+- Networking is not working
+- You get `Permission denied` with SSH
 
 ---
 
@@ -95,10 +110,11 @@ systemctl restart ssh
 
 ```
 linode-image-builder/
-├── build-image.sh        # Main image creation script
-├── post-boot-setup.md    # Console commands if network/ssh fails
-├── README.md             # This file
-└── files/                # (Optional) User files to be injected into image
+├── build-image.sh         # Main image creation script
+├── manual-steps.md        # Step-by-step manual process
+├── post-boot-setup.md     # Console recovery instructions
+├── README.md              # This file
+├── LICENSE                # MIT License
 ```
 
 ---
@@ -114,5 +130,4 @@ linode-image-builder/
 ## 🧑‍💻 Author
 
 Made with ❤️ by Athanasios Sersemis
-
 MIT License
