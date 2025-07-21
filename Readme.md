@@ -140,11 +140,13 @@ systemctl restart ssh
 
 ```
 linode-image-builder/
-├── build-image.sh         # Main image creation script
-├── manual-steps.md        # Step-by-step manual process
-├── post-boot-setup.md     # Console recovery instructions
-├── README.md              # This file
-├── LICENSE                # MIT License
+├── build-image.sh       # Automated image creation script (raw image → debootstrap → compressed .gz)
+├── manual-steps.md      # Manual step-by-step breakdown (every command in order, with comments)
+├── post-boot.md         # What to do after you boot the image on Linode
+├── images/              # Screenshots and documentation images
+│   └── linode-upload.png
+├── LICENSE              # MIT License
+├── README.md            # Project description, usage, and structure
 ```
 
 ---
