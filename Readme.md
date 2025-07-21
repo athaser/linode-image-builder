@@ -3,6 +3,13 @@
 This project builds a **bootable Ubuntu Server image** from scratch using `debootstrap`, preconfigured for deployment on **Linode** as a custom image. It allows you to create a lightweight, reproducible, and portable system with preinstalled tools and custom files.
 
 ---
+### ✅ Successful Boot on Linode Console
+
+This image was tested successfully on a Linode VM using the LISH console:
+
+![Boot Success on Linode](images/boot-success.png)
+
+---
 
 ## ✅ Features
 
