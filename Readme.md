@@ -3,6 +3,22 @@
 This project builds a **bootable Ubuntu Server image** from scratch using `debootstrap`, preconfigured for deployment on **Linode** as a custom image. It allows you to create a lightweight, reproducible, and portable system with preinstalled tools and custom files.
 
 ---
+
+## 💡 Purpose
+
+This project was built to solve a real-world cost and upload limitation:
+
+- Linode only allows custom images up to **6GB**.
+- Attempting to create an image from an existing VM (e.g. 20GB backups) **fails**.
+
+We built this repo to:
+
+- ✅ **Reduce monthly VM costs** by avoiding the snapshot/image storage model.
+- ✅ **Bypass Linode’s 6GB image size limit** using a minimal `debootstrap` build.
+- ✅ **Include SSH access, preinstalled tools, user, and personal files** inside the image.
+
+---
+
 ### ✅ Successful Boot on Linode Console
 
 This image was tested successfully on a Linode VM using the LISH console:
