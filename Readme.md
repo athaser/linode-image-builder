@@ -144,7 +144,7 @@ linode-image-builder/
 ├── manual-steps.md      # Manual step-by-step breakdown (every command in order, with comments)
 ├── post-boot.md         # What to do after you boot the image on Linode
 ├── images/              # Screenshots and documentation images
-│   └── linode-upload.png
+│   └── boot-success.png
 ├── LICENSE              # MIT License
 ├── README.md            # Project description, usage, and structure
 ```
