@@ -182,6 +182,7 @@ cat /etc/ssh/sshd_config | grep -iE 'PermitRootLogin|PasswordAuthentication'
 sed -i 's/#\?PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -i 's/#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
+# Add them manually if they don't exist
 echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
 echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
 

@@ -101,7 +101,14 @@ If SSH login fails with “Permission denied”:
 ```bash
 sed -i 's/#\?PermitRootLogin.*/PermitRootLogin yes/' /etc/ssh/sshd_config
 sed -i 's/#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+
+# Add them manually if they don't exist
+echo "PermitRootLogin yes" >> /etc/ssh/sshd_config
+echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config
+
 systemctl restart ssh
+
+
 ```
 
 ---
